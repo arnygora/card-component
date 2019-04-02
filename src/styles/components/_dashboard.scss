@@ -1,6 +1,13 @@
+.card-wrapper {
+  max-width: 55rem;
+  border: 1px solid $grey;
+  border-radius: 5px;
+  float: right;
+}
+
 .card-item {
-  border: 1px solid indianred;
   background: $dashboard-bg;
+  border-radius: 3px 3px 0 0;
 }
 
 .logo-block {
@@ -12,14 +19,15 @@
   align-items: center;
   width: 50px;
   height: 50px;
-  font-weight: 900;
+  font-weight: 700;
   background: #000;
   color: white;
 }
 
 .card-item__title {
+  margin: 0 $m-size;
   color: white;
-  font-size: 4rem;
+  font-size: 4rem;  text-align: center;
   line-height: 1.2;
   font-weight: 300;
   border-radius: 5px;

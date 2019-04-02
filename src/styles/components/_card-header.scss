@@ -1,0 +1,39 @@
+.header-block {
+  display: flex;
+}
+
+.header-block__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85px;
+  width: 85px;
+  padding: $m-size;
+  background: #000;
+  border-radius: 50%;
+  p {
+    font-size: $m-size * 2.2;
+    font-weight: 700;
+    color: white;
+  }
+}
+
+.header-block__text {
+  display: flex;
+  flex-direction: column;
+  margin-left: $s-size;
+  address {
+    font-style: normal;
+    a {
+      color: #5873ff;
+    }
+  }
+}
+
+.header-block__title {
+  display: flex;
+  span {
+    margin-left: $s-size;
+    color: #ccc;
+  }
+}

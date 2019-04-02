@@ -1,0 +1,14 @@
+.description-block {
+  padding: 10px 20px;
+  h4 {
+    margin-bottom: $s-size;
+  }
+  p {
+    margin-bottom: $s-size;
+    color: #000;
+    line-height: 1;
+  }
+  span {
+    color: #ccc;
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Board } from "./components/Board";
+import { SocialCard } from "./components/SocialCard";
 import './styles/styles.scss'
 
-ReactDOM.render(<Board />, document.getElementById("root"));
+ReactDOM.render(<SocialCard />, document.getElementById("root"));

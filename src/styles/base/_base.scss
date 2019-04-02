@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -11,6 +13,19 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
   line-height: 1.6;
+}
+
+.container {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  &:before {
+    content: ' ';
+    display: block;
+    margin: 15px 0;
+    border-bottom: 1px solid #ccc;
+  }
 }
 
 button {
@@ -25,9 +40,3 @@ button:disabled {
   font-weight: bold;
 }
 
-.container {
-  max-width: $desktop-breakpoint;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 1.5rem;
-}
