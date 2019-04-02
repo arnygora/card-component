@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Dashboard = () => (
+const Socials = () => (
     <div>
         <h1>My ef</h1>
     </div>
 );
 
-export { Dashboard }
+export { Socials }
