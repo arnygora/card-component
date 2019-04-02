@@ -1,0 +1,25 @@
+.author {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}
+
+.author-block {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  border-radius: 3px;
+  background: #f9f9f9;
+}
+
+.author-block__title {
+  color: $dashboard-bg;
+  font-size: $font-size-small;
+  margin: 0 5px;
+}
+
+.author-block__img img {
+  width: 40px;
+
+  vertical-align: middle;
+}
