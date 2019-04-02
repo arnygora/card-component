@@ -2,7 +2,7 @@ import React from 'react'
 
 const Dashboard = () => (
     <div>
-        <h1>My component</h1>
+        <h1>My ef</h1>
     </div>
 );
 
