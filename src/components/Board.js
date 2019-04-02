@@ -6,7 +6,7 @@ class Board extends Component {
         return (
             <div className="container">
                 <div className="card-item">
-                    <h1 className='card-item__title'>Learefefefning React Start?</h1>
+                    <h1 className='card-item__title'>Learning React Start?</h1>
                 </div>
 
             </div>
