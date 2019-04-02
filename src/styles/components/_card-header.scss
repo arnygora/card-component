@@ -1,5 +1,16 @@
 .header-block {
+  position: relative;
   display: flex;
+  button {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    align-self: flex-start;
+    border: navajowhite;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+  }
 }
 
 .header-block__logo {
