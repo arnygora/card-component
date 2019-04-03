@@ -1,6 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { SocialCard } from "./components/SocialCard";
-import './styles/styles.scss'
+import {BrowserRouter} from "react-router-dom";
 
-ReactDOM.render(<SocialCard />, document.getElementById("root"));
+import './styles/styles.scss'
+import {RouterApp} from "./components/Router/Navigation";
+
+ReactDOM.render(
+    <BrowserRouter>
+        <RouterApp/>
+    </BrowserRouter>,
+    document.getElementById("root"));

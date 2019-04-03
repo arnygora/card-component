@@ -1,6 +1,6 @@
 @import './base/settings';
 @import './base/base';
-@import './components/dashboard';
-@import './components/author-block';
-@import './components/description';
-@import './components/card-header';
+@import 'components/Card/dashboard';
+@import 'components/Card/author-block';
+@import 'components/Card/description';
+@import 'components/Card/card-header';

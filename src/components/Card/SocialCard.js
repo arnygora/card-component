@@ -12,8 +12,6 @@ class SocialCard extends Component {
         this.setState({
             isClicked: !this.state.isClicked
         });
-        console.log(this.state.isClicked)
-
     };
 
     render() {

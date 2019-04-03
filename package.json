@@ -25,10 +25,13 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "history": "^4.9.0",
     "node-sass": "^4.11.0",
     "path": "^0.12.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
     "sass-loader": "^7.1.0"
   }
 }
