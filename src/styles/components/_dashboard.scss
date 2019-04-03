@@ -1,8 +1,13 @@
 .card-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-block {
   max-width: 55rem;
+  margin-bottom: $m-size;
   border: 1px solid $grey;
   border-radius: 5px;
-  float: right;
 }
 
 .card-item {

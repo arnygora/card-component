@@ -20,7 +20,7 @@ body {
   margin: 0 auto;
   padding: 0 1.5rem;
 
-  &:before {
+  &:before, .social-bottom:after {
     content: ' ';
     display: block;
     margin: 15px 0;
@@ -40,3 +40,9 @@ button:disabled {
   font-weight: bold;
 }
 
+.insteadBlock {
+  margin: $l-size;
+  font-weight: 700;
+  text-align: center;
+  color: $dashboard-bg;
+}

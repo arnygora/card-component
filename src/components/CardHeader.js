@@ -1,16 +1,9 @@
 import React, {Component} from 'react'
 
 class CardHeader extends Component {
-    state = {
-        isClicked: false
-    };
-
     onClickButton = () => {
-        this.setState({
-            isClicked: !this.state.isClicked
-        })
+        this.props.test()
     };
-
     render() {
         return (
             <div className='header-block'>
@@ -25,7 +18,7 @@ class CardHeader extends Component {
                     <address>&#123; author:<a href='#'>&#64;dceddia</a> &#125;</address>
                 </div>
                 <button onClick={this.onClickButton}>{
-                    this.state.isClicked ? String.fromCharCode(9650) : String.fromCharCode(9660)
+                    this.props.buttonState ? String.fromCharCode(9650) : String.fromCharCode(9660)
                 }</button>
             </div>
         )
