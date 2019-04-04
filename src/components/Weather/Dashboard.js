@@ -5,6 +5,11 @@ class Board extends Component {
         data: []
     };
 
+//Promise.resolve().then(() => {
+ // this.setState({ n: 13 });
+ // console.log(this.state.n); // ?????
+//});
+
     componentWillMount() {
         let url = 'https://api.openweathermap.org/data/2.5/weather?q=Cherkasy,ua&appid=309e94a3b5f4c65cd46f4e8bdf08ef8e';
         fetch(url)
