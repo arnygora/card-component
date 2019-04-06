@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
+import {ViewPage} from "./components/ViewPage";
 
 import './styles/styles.scss'
-import {RouterApp} from "./components/Router/Navigation";
 
 ReactDOM.render(
     <BrowserRouter>
-        <RouterApp/>
+        <ViewPage/>
     </BrowserRouter>,
     document.getElementById("root"));

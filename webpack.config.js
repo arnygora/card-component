@@ -6,9 +6,9 @@ module.exports = {
         path: path.join(__dirname, 'public'),
         filename: 'bundle.js'
     },
-    devServer: {
-        contentBase: path.join(__dirname, 'public'),
-    },
+    // devServer: {
+    //     contentBase: path.join(__dirname, 'public'),
+    // },
     module: {
         rules: [{
             use: ['babel-loader'],
@@ -23,5 +23,9 @@ module.exports = {
             ]
         }]
     },
-    devtool: 'cheap-module-eval-source-map'
+    devtool: 'cheap-module-eval-source-map',
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+        historyApiFallback: true
+    }
 };

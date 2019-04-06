@@ -5,42 +5,31 @@ class Board extends Component {
         data: []
     };
 
-//Promise.resolve().then(() => {
- // this.setState({ n: 13 });
- // console.log(this.state.n); // ?????
-//});
+  getData = () => {
+      let url = 'https://api.openweathermap.org/data/2.5/weather?q=Cherkasy,ua&appid=309e94a3b5f4c65cd46f4e8bdf08ef8e';
+      fetch(url)
+          .then(res => res.json())
+          .then((out) => {
+              this.setState({
+                  data: out
+              });
 
-    componentWillMount() {
-        let url = 'https://api.openweathermap.org/data/2.5/weather?q=Cherkasy,ua&appid=309e94a3b5f4c65cd46f4e8bdf08ef8e';
-        fetch(url)
-            .then(res => res.json())
-            .then((out) => {
-                Array.from(out).forEach(item => {
-                   this.setState({
-                       ...this.state.data,
-                       item
-                   })
-                });
-                console.log('Checkout this JSON! ', out);
-            })
-            .catch(err => {
-                throw err
-            });
-    }
+              console.log('Checkout this JSON! ', out);
 
-    getData = () => {
-
-    };
+          }).catch(err => {
+          throw err
+      });
+  };
 
     render() {
-        const { weather, base, main, wind, clouds, dt, sys, id, name, cod } = this.state.data;
+        const {weather, base, main, wind, clouds, dt, sys, id, name, cod} = this.state.data;
         return (
             <div>
                 <button onClick={this.getData}>Get data</button>
 
-                <p>{weather}</p>
-                <p>{base}</p>
-                <p>{wind}</p>
+                <p>{console.log({weather})}</p>
+                {/*<p>{base}</p>*/}
+                {/*<p>{wind}</p>*/}
 
             </div>
 
@@ -48,4 +37,4 @@ class Board extends Component {
     }
 }
 
-export {Board}
+export {Board};
