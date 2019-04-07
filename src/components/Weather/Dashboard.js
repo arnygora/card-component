@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react'
+import {msToTime} from './timeConverter'
 
 class Board extends Component {
     state = {
@@ -18,14 +19,17 @@ class Board extends Component {
         if (!this.state.data) {
             return <div>Loading</div>
         }
-        const {weather, base, main, wind, clouds, dt, sys, id, name, cod, coord} = this.state.data;
+        const {weather, main, wind, clouds, dt, sys, id, name, cod, coord} = this.state.data;
         return (
             <Fragment>
                 <div>
-                    <p>{name || 'Unknown'}</p>
-                    <p>{base}</p>
-                    <p>{(JSON.stringify(weather[0].description))}</p>
-                    <p>{Object.values(coord)}</p>
+                    <p>Місто: {name || 'Unknown'}</p>
+                    <p>Хмарність: {weather[0].description}</p>
+                    <p>Швидкість вітру: {wind.speed}</p>
+                    <p>Тиск: {main.pressure}</p>
+                    <p>Схід сонця: {msToTime(sys.sunrise)}</p>
+                    <p>Захід сонця: {msToTime(sys.sunset)}</p>
+                    {/*<p>Координати: {Object.values(coord)}</p>*/}
                 </div>
             </Fragment>
         )
