@@ -8,13 +8,15 @@ import {createBrowserHistory} from "history";
 export const history = createBrowserHistory();
 
 export const ViewPage = () => (
-    <Fragment>
-        <Navy/>
-        <Router history={history}>
-            <Switch>
-                <Route exact path='/card' component={SocialCard}/>
-                <Route exact path='/weather' component={Board}/>
-            </Switch>
-        </ Router>
-    </Fragment>
+    <section>
+        <div className="wrapper">
+            <Navy/>
+            <Router history={history}>
+                <Switch>
+                    <Route exact path='/card' component={SocialCard}/>
+                    <Route exact path='/weather' component={Board}/>
+                </Switch>
+            </ Router>
+        </div>
+    </section>
 );

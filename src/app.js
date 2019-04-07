@@ -9,4 +9,5 @@ ReactDOM.render(
     <BrowserRouter>
         <ViewPage/>
     </BrowserRouter>,
-    document.getElementById("root"));
+    document.getElementById("root"),
+    () => console.log(`Поточний час: ${new Date().toLocaleTimeString()}`));
