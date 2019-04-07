@@ -1,22 +1,10 @@
-import React, {Fragment} from 'react'
+import React  from 'react'
 import {Navy} from "./Router/Navigation";
-import {Route, Router, Switch} from "react-router";
-import {SocialCard} from "./Card/SocialCard";
-import {Board} from "./Weather/Dashboard";
-import {createBrowserHistory} from "history";
-
-export const history = createBrowserHistory();
+import AppRouter from "./Router/AppRouter";
 
 export const ViewPage = () => (
-    <section>
-        <div className="wrapper">
-            <Navy/>
-            <Router history={history}>
-                <Switch>
-                    <Route exact path='/card' component={SocialCard}/>
-                    <Route exact path='/weather' component={Board}/>
-                </Switch>
-            </ Router>
-        </div>
-    </section>
+    <div className="wrapper">
+        <Navy/>
+        <AppRouter/>
+    </div>
 );

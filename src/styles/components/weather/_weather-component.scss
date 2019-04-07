@@ -1,0 +1,10 @@
+.weather-card {
+  margin: 0 auto;
+  padding: $s-size;
+  border: 3px solid #5584ff;
+  border-radius: 8px;
+
+  .weather-card__city {
+    text-align: center;
+  }
+}

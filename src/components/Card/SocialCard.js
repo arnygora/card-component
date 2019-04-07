@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {Card} from "./socials/Card";
 import {CardHeader} from "./CardHeader";
 import {Socials} from "./socials/Socials";
@@ -16,7 +16,7 @@ class SocialCard extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className='container'>
                 <CardHeader test={this.handleClick} buttonState={this.state.isClicked}/>
                 {this.state.isClicked ?
                     <div className="card-wrapper">
@@ -24,7 +24,7 @@ class SocialCard extends Component {
                     </div>
                     : <h3 className='insteadBlock'>collapsed card</h3>
                 }
-                <Socials />
+                <Socials/>
             </div>
         );
     }

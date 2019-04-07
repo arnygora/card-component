@@ -10,7 +10,7 @@ const AppRouter = () => (
     <Router history={history}>
         <Switch>
             <Route path='/card' component={SocialCard}/>
-            <Route path='/weather' component={Board}/>
+            <Route exact={true} path='/weather' component={Board}/>
         </Switch>
     </ Router>
 );

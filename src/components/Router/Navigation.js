@@ -5,10 +5,10 @@ const Navy = () => (
         <aside className='navy'>
             <nav className='navy-block'>
                 <li className='navy-block__item'>
-                    <NavLink activeClassName="selected" to='/card'>Card component</NavLink>
+                    <NavLink to='/card' activeClassName="active">Card component</NavLink>
                 </li>
                 <li className='navy-block__item'>
-                    <NavLink to='/weather'>Weather component</NavLink>
+                    <NavLink to='/weather' activeClassName="active">Weather component</NavLink>
                 </li>
             </nav>
         </aside>
