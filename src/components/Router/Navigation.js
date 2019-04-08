@@ -5,13 +5,13 @@ const Navy = () => (
         <aside className='navy'>
             <nav className='navy-block'>
                 <li className='navy-block__item'>
-                    <NavLink to='/card' activeClassName="active">Card component</NavLink>
+                    <NavLink className='navy-block__link' to='/card' activeClassName="active">Card component</NavLink>
                 </li>
                 <li className='navy-block__item'>
-                    <NavLink to='/weather' activeClassName="active">Weather component</NavLink>
+                    <NavLink className='navy-block__link' to='/weather' activeClassName="active">Weather component</NavLink>
                 </li>
                 <li className='navy-block__item'>
-                    <NavLink to='/reddit' activeClassName="active">News component</NavLink>
+                    <NavLink className='navy-block__link' to='/reddit' activeClassName="active">News component</NavLink>
                 </li>
             </nav>
         </aside>

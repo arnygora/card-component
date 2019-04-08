@@ -13,7 +13,6 @@
 
 .navy-block__item {
   padding: $s-size;
-  list-style: none;
   border-left: 8px solid transparent;
   border-bottom: 1px solid #767676;
   -webkit-transition: all .1s ease-out;
@@ -49,7 +48,7 @@
     animation: sheen 1s forwards;
   }
 
-  a {
+  .navy-block__link {
     text-decoration: none;
     font-weight: 700;
     color: #ff442c;
