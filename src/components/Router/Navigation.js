@@ -10,6 +10,9 @@ const Navy = () => (
                 <li className='navy-block__item'>
                     <NavLink to='/weather' activeClassName="active">Weather component</NavLink>
                 </li>
+                <li className='navy-block__item'>
+                    <NavLink to='/reddit' activeClassName="active">News component</NavLink>
+                </li>
             </nav>
         </aside>
 );
