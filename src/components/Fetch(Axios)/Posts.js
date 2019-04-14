@@ -22,7 +22,7 @@ class Reddit extends Component {
                 <h1>\n\REACT.JS</h1>
                 <ul className='posts-block__list'>
                     {this.state.posts.map((item, key) => (
-                        <li className='posts-block__item' key={item.id}>{item.title}
+                        <li key={item.id} className='posts-block__item'>{item.title}
                         <span><a target='_blank' href={item.url}>More</a></span>
                         </li>
                     ))}
