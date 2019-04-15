@@ -5,6 +5,7 @@ import {SocialCard} from "../Card/SocialCard";
 import {Board} from "../Weather/Dashboard";
 import {Reddit} from "../Fetch(Axios)/Posts";
 import {Seasons} from "../SeasonsPictures/Seasons";
+import {ModalWindow} from "../ModalWindow/ModalWindow";
 
 // export const history = createBrowserHistory();
 
@@ -16,6 +17,7 @@ const AppRouter = () => (
         <Route exact={true} path='/weather' component={Board}/>
         <Route exact={true} path='/reddit' component={Reddit}/>
         <Route exact={true} path='/seasons' component={Seasons}/>
+        <Route exact={true} path='/modal' component={ModalWindow}/>
         {/*</Switch>*/}
         {/*</ Router>*/}
     </Fragment>
