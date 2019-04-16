@@ -1,0 +1,21 @@
+.wrapp {
+  width: calc(100% - 196px);
+  margin: 0 auto;
+  background: #d5f9fb;
+}
+
+.task-header ul {
+  display: flex;
+  justify-content: start;
+  li {
+    margin: $s-size;
+    a {
+      font-weight: bold;
+      color: #ff442c;
+    }
+  }
+}
+
+.views-section {
+  text-align: center;
+}

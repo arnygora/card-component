@@ -6,19 +6,21 @@ import {Board} from "../Weather/Dashboard";
 import {Reddit} from "../Fetch(Axios)/Posts";
 import {Seasons} from "../SeasonsPictures/Seasons";
 import {ModalWindow} from "../ModalWindow/ModalWindow";
+import {FirstTask} from '../TestTask #1/FirstTask'
 
 // export const history = createBrowserHistory();
 
 const AppRouter = () => (
     <Fragment>
         {/*<Router history={history}>*/}
-        {/*<Switch>*/}
-        <Route exact={true} path='/card' component={SocialCard}/>
-        <Route exact={true} path='/weather' component={Board}/>
-        <Route exact={true} path='/reddit' component={Reddit}/>
-        <Route exact={true} path='/seasons' component={Seasons}/>
-        <Route exact={true} path='/modal' component={ModalWindow}/>
-        {/*</Switch>*/}
+        <Switch>
+            <Route exact={true} path='/card' component={SocialCard}/>
+            <Route exact={true} path='/weather' component={Board}/>
+            <Route exact={true} path='/reddit' component={Reddit}/>
+            <Route exact={true} path='/seasons' component={Seasons}/>
+            <Route exact={true} path='/modal' component={ModalWindow}/>
+            <Route exact={true} path='/:page' component={FirstTask}/>
+        </Switch>
         {/*</ Router>*/}
     </Fragment>
 );

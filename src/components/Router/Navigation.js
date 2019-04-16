@@ -20,7 +20,7 @@ const Navy = () => (
                     <NavLink className='navy-block__link' to='/modal' activeClassName="active">Modal Window</NavLink>
                 </li>
                 <li className='navy-block__item'>
-                    <NavLink className='navy-block__link' to='/' activeClassName="active">Some link</NavLink>
+                    <NavLink className='navy-block__link' to='/task1' activeClassName="active">Тестове завдання #1</NavLink>
                 </li>
                 <li className='navy-block__item'>
                     <NavLink className='navy-block__link' to='/' activeClassName="active">Some link</NavLink>
