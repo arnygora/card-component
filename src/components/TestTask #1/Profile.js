@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 
 export const Profile = () => (
-    <h2>Profile</h2>
+    <Fragment>
+        <h2>Profile</h2>
+    </Fragment>
 );

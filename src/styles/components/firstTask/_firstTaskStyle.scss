@@ -19,3 +19,45 @@
 .views-section {
   text-align: center;
 }
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input:disabled {
+  background-color: #fafbfc;
+}
+
+#login-form {
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  background-color: #bfccd0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+
+  .error-message {
+    color: red;
+  }
+}
+
+#login-form  button {
+  width: 100%;
+}
+
+button {
+  background-color: #74bb77;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
