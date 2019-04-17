@@ -7,17 +7,19 @@ import {createBrowserHistory} from 'history';
 export const history = createBrowserHistory();
 
 class FirstTask extends Component {
-    componentDidMount() {
-        const isAuth = (localStorage.getItem('user'));
-        // this.setState({
-        //     user: isAuth
-        // })
+    state = {
+        isAuth: null
+    };
+
+    async componentDidMount() {
+        const data = JSON.parse(localStorage.getItem('user'));
+        await this.setState({isAuth: data});
+        console.log(this.state);
     };
 
     checkAuth = (e) => {
         e.preventDefault();
-
-        this.state.user ? console.log('not logged') : history.push('/login');
+        this.state.isAuth ? history.push('/login') : console.log('not logged') ;
     };
 
     render() {

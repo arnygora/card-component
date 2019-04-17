@@ -6,11 +6,14 @@ class Login extends React.Component {
         password: ''
     };
 
+    //or handleChange = (e, { name, value } = e.currentTarget) => {
     handleChange = (event) => {
         const {name, value} = event.currentTarget;
         this.setState({[name]: value});
-        console.log(this.state)
+    };
 
+    handleSubmit = () => {
+        localStorage.setItem('user', JSON.stringify(this.state));
     };
 
     render() {
