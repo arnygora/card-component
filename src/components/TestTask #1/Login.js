@@ -1,12 +1,10 @@
 import React, {Fragment} from 'react'
-import { Redirect} from "react-router";
-
 
 class Login extends React.Component {
     state = {
         username: '',
         password: '',
-        error: false
+        error: true
     };
 
     //or handleChange = (e, { name, value } = e.currentTarget) => {
@@ -19,10 +17,11 @@ class Login extends React.Component {
         e.preventDefault();
         const {password, username} = this.state;
 
-        localStorage.setItem('user', JSON.stringify(this.state));
-        if (!(username === 'anton' && password === '12345')) {
-            return this.setState({error: false}, () => {
-                this.props.history.push('/login')
+        if (username === 'anton' && password === '12345') {
+            localStorage.setItem('user', JSON.stringify(this.state));
+            return this.setState({error: false},
+                () => {
+                this.props.history.push('/profile')
             });
         }
     };
@@ -32,7 +31,7 @@ class Login extends React.Component {
         return (
             <Fragment>
                 {
-                    error && <p>Enter correct data</p>
+                    error && <p>Enter correct data (username anton && password 12345)</p>
                 }
                 <div id='login'>
                     <form id='login-form'
@@ -49,11 +48,6 @@ class Login extends React.Component {
                                onChange={this.handleChange}
                         />
                         <button type="submit">Sign In</button>
-                        <div className='error-message'
-                            // hidden={!error}
-                        >
-                            {/*{error}*/}
-                        </div>
                     </form>
                 </div>
             </Fragment>

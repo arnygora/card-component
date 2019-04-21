@@ -1,9 +1,6 @@
 import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
 import {RouterComponent} from "./RouterComponent";
-// import {createBrowserHistory} from 'history';
-
-// export const history = createBrowserHistory();
 
 class FirstTask extends Component {
     state = {
@@ -18,7 +15,7 @@ class FirstTask extends Component {
 
     checkAuth = (e) => {
         e.preventDefault();
-        Boolean(this.state.isAuth) ? this.props.history.push('/profile') : this.props.history.push('/login') ;
+        Boolean(this.state.isAuth) ? this.props.history.push('/profile') : this.props.history.push('/login');
     };
 
     render() {
