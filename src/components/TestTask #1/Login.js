@@ -1,9 +1,12 @@
 import React, {Fragment} from 'react'
+import { Redirect} from "react-router";
+
 
 class Login extends React.Component {
     state = {
         username: '',
-        password: ''
+        password: '',
+        error: false
     };
 
     //or handleChange = (e, { name, value } = e.currentTarget) => {
@@ -12,14 +15,25 @@ class Login extends React.Component {
         this.setState({[name]: value});
     };
 
-    handleSubmit = () => {
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const {password, username} = this.state;
+
         localStorage.setItem('user', JSON.stringify(this.state));
+        if (!(username === 'anton' && password === '12345')) {
+            return this.setState({error: false}, () => {
+                this.props.history.push('/login')
+            });
+        }
     };
 
     render() {
+        const {error} = this.state;
         return (
             <Fragment>
-                <h2>Profile</h2>
+                {
+                    error && <p>Enter correct data</p>
+                }
                 <div id='login'>
                     <form id='login-form'
                           onSubmit={this.handleSubmit}

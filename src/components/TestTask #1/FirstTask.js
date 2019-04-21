@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
-// import {Router, Route, Redirect} from "react-router";
 import {RouterComponent} from "./RouterComponent";
-import {createBrowserHistory} from 'history';
+// import {createBrowserHistory} from 'history';
 
-export const history = createBrowserHistory();
+// export const history = createBrowserHistory();
 
 class FirstTask extends Component {
     state = {
@@ -14,12 +13,12 @@ class FirstTask extends Component {
     async componentDidMount() {
         const data = JSON.parse(localStorage.getItem('user'));
         await this.setState({isAuth: data});
-        console.log(this.state);
+        console.log(Boolean(this.state.isAuth));
     };
 
     checkAuth = (e) => {
         e.preventDefault();
-        this.state.isAuth ? history.push('/login') : console.log('not logged') ;
+        Boolean(this.state.isAuth) ? this.props.history.push('/profile') : this.props.history.push('/login') ;
     };
 
     render() {
