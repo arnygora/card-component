@@ -10,7 +10,7 @@ class FirstTask extends Component {
     async componentDidMount() {
         const data = JSON.parse(localStorage.getItem('user'));
         await this.setState({isAuth: data});
-        console.log(Boolean(this.state.isAuth));
+        console.log('user logged in => ' + Boolean(this.state.isAuth));
     };
 
     checkAuth = (e) => {
