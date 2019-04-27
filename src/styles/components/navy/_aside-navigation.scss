@@ -49,8 +49,12 @@
   }
 
   .navy-block__link {
-    text-decoration: none;
+    background: -webkit-gradient(linear,left top,right top,from(#ff8a00),to(#da1b60));
+    background: linear-gradient(to right,#ff8a00,#da1b60);
     font-weight: 700;
-    color: #ff442c;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
   }
 
