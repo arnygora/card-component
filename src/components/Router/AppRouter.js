@@ -6,7 +6,7 @@ import {Board} from "../Weather/Dashboard";
 import {Reddit} from "../Fetch(Axios)/Posts";
 import {Seasons} from "../SeasonsPictures/Seasons";
 import {ModalWindow} from "../ModalWindow/ModalWindow";
-import {FirstTask} from '../TestTask #1/FirstTask'
+import FirstTask from '../TestTask #1/FirstTask'
 
 // export const history = createBrowserHistory();
 

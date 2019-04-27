@@ -1,6 +1,7 @@
-import React, {Component} from 'react'
-import {NavLink} from 'react-router-dom'
-import {RouterComponent} from "./RouterComponent";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom'
+import { RouterComponent } from "./RouterComponent";
 
 class FirstTask extends Component {
     state = {
@@ -10,7 +11,7 @@ class FirstTask extends Component {
     async componentDidMount() {
         const data = JSON.parse(localStorage.getItem('user'));
         await this.setState({isAuth: data});
-        console.log('user logged in => ' + Boolean(this.state.isAuth));
+        console.log(this.props.user + ' logged in => ' + Boolean(this.state.isAuth));
     };
 
     checkAuth = (e) => {
@@ -19,6 +20,7 @@ class FirstTask extends Component {
     };
 
     render() {
+        const { name, surname, age } = this.props.user;
         return (
             <div className='wrapp'>
                 <header className='task-header'>
@@ -36,6 +38,7 @@ class FirstTask extends Component {
                             </li>
                         </ul>
                     </nav>
+                    <span>Привітулі {name} {surname}</span>
                 </header>
                 <section className='views-section'>
                     <RouterComponent/>
@@ -45,4 +48,11 @@ class FirstTask extends Component {
     }
 }
 
-export {FirstTask}
+const mapStateToProps = store => {
+    console.log(store);
+    return {
+        user: store.user,
+    }
+};
+
+export default connect(mapStateToProps)(FirstTask)
