@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Switch} from "react-router";
 import {Home} from "./Home";
 import {News} from "./News";
-import {Profile} from "./Profile";
+import {Profile} from "./profile/Profile";
 import {Login} from "./Login";
 
 export const RouterComponent = () => (

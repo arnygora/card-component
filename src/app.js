@@ -7,9 +7,8 @@ import { ViewPage } from "./components/ViewPage";
 
 import './styles/styles.scss'
 
-
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={ store }>
         <BrowserRouter>
             <ViewPage/>
         </BrowserRouter>

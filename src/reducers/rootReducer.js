@@ -1,11 +1,8 @@
-const reducerDefaultState = {
-    user: {
-        name: 'Василий',
-        surname: 'Реактов',
-        age: 27,
-    },
-};
+import { combineReducers } from 'redux'
+import userReducer from '../reducers/user';
+import { pageReducer }from '../reducers/page';
 
-export default (state = reducerDefaultState, action) => {
-    return state
-}
+export const rootReducer = combineReducers({
+    user: userReducer,
+    page: pageReducer,
+});
