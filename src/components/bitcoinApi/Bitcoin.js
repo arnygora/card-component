@@ -10,7 +10,7 @@ class Bitcoin extends Component {
             labels: ['uno', 'dos', 'tres'],
             datasets: [{
                 label: 'Bitcoin API',
-                data: [45, 54, 58],
+                data: [45, 46, 47],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.5)',
                     'rgba(54, 162, 235, 0.5)',
@@ -26,24 +26,48 @@ class Bitcoin extends Component {
         }
     };
 
-    async componentDidMount() {
-        const fetchParams = {
-            method: 'GET',
-            mode: 'cors'
-        };
+    getData = () => {
+        fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
+            .then(res => res.json())
+            .then(data => {
+                const {USD, EUR, GBP} = data.bpi;
+                console.log(data);
+                this.setState((prevState) => ({
+                    ...prevState, data: {
+                        ...prevState.data,
+                        labels: [`${USD.description}`, `${EUR.description}`, `${GBP.description}`],
+                        datasets: [{
+                        ...prevState.data.datasets, data: [`${USD.rate_float}`, `${EUR.rate_float}`, `${GBP.rate_float}`]
+                        }]
+                    },
+                    description: data.disclaimer,
+                }));
+            })
+    };
 
-        const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
-        const res = await fetch(url, fetchParams);
-        const out = await res.json();
-
-        const {USD, EUR, GBP} = out.bpi;
-        console.log(out);
-        await this.setState((prevState) => ({
-            ...prevState,
-            description: out.disclaimer,
-            labels: [`${USD.description}`, `${EUR.description}`, `${GBP.description}`]
-        }));
-    }
+    // async componentDidMount() {
+    //     const fetchParams = {
+    //         method: 'GET',
+    //         mode: 'cors'
+    //     };
+    //
+    //     const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+    //     const res = await fetch(url, fetchParams);
+    //     const out = await res.json();
+    //
+    //     const {USD, EUR, GBP} = out.bpi;
+    //     console.log(out);
+    //     await this.setState((prevState) => ({
+    //         ...prevState, data: {
+    //             ...prevState.data,
+    //             labels: [`${USD.description}`, `${EUR.description}`, `${GBP.description}`],
+    //             // datasets: [{
+    //             // ...prevState.data.datasets, data: ['4', '5', '6']
+    //             // }]
+    //         },
+    //         description: out.disclaimer,
+    //     }));
+    // }
 
     static defaultProps = {
         titleDisplay: true,
@@ -58,8 +82,16 @@ class Bitcoin extends Component {
     render() {
         return (
             <div className='chart'>
+                <button onClick={this.getData}>GET DATA FOR CURRENT COURSE OF BITCOIN</button>
                 <Bar data={this.state.data}
                      options={{
+                         scales: {
+                           yAxes: [{
+                               ticks: {
+                                   beginAtZero: true
+                               }
+                           }]
+                         },
                          title: {
                              display: this.props.titleDisplay,
                              text: `${this.state.description}`,

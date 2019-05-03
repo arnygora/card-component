@@ -16,7 +16,32 @@ export const data = {
                 'rgba(255, 206, 86, 1)'
             ],
             borderWidth: 1
-        }]
+        }],
+
+
+
+
+    Начальный :
+        {
+            user : {
+                skills : {
+                    html :true,
+                    css : true,
+                }
+            }
+        }
+
+    Обновление :
+        {
+            ...prevState,
+            user : {
+                ...prevState.user,
+                skills : {
+                    ...prevState.user.skills
+                    js : true // добавили поле
+                }
+            }
+        }
 
 
     };
