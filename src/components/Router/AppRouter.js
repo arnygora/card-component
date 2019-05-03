@@ -1,12 +1,13 @@
-import React, {Fragment} from 'react';
-import {Router, Route, Switch} from "react-router";
+import React, { Fragment } from 'react';
+import { Router, Route, Switch } from 'react-router';
 // import {createBrowserHistory} from 'history';
-import {SocialCard} from "../Card/SocialCard";
-import {Board} from "../Weather/Dashboard";
-import {Reddit} from "../Fetch(Axios)/Posts";
-import {Seasons} from "../SeasonsPictures/Seasons";
-import {ModalWindow} from "../ModalWindow/ModalWindow";
+import { SocialCard } from '../Card/SocialCard';
+import { Board } from '../Weather/Dashboard';
+import { Reddit } from '../Fetch(Axios)/Posts';
+import { Seasons } from '../SeasonsPictures/Seasons';
+import { ModalWindow } from '../ModalWindow/ModalWindow';
 import FirstTask from '../TestTask #1/FirstTask'
+import { Bitcoin } from '../bitcoinApi/Bitcoin'
 
 // export const history = createBrowserHistory();
 
@@ -19,6 +20,7 @@ const AppRouter = () => (
             <Route exact={true} path='/reddit' component={Reddit}/>
             <Route exact={true} path='/seasons' component={Seasons}/>
             <Route exact={true} path='/modal' component={ModalWindow}/>
+            <Route exact={true} path='/bitcoin' component={Bitcoin}/>
             <Route exact={true} path='/:page' component={FirstTask}/>
         </Switch>
         {/*</ Router>*/}
