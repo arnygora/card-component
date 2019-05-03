@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {Bar, Line, Pie} from 'react-chartjs-2';
 
-// import {data} from './data'
-
 class Bitcoin extends Component {
     state = {
         description: '',
@@ -37,7 +35,14 @@ class Bitcoin extends Component {
                         ...prevState.data,
                         labels: [`${USD.description}`, `${EUR.description}`, `${GBP.description}`],
                         datasets: [{
-                        ...prevState.data.datasets, data: [`${USD.rate_float}`, `${EUR.rate_float}`, `${GBP.rate_float}`]
+                            ...prevState.data.datasets,
+                            data: [`${USD.rate_float}`, `${EUR.rate_float}`, `${GBP.rate_float}`],
+                            label: data.chartName,
+                            ...prevState.data.datasets.backgroundColor, backgroundColor: [
+                                'rgba(45, 9, 132, 0.8)',
+                                'rgba(5, 1, 235, 0.8)',
+                                'rgba(25, 2, 86, 0.8)'
+                            ],
                         }]
                     },
                     description: data.disclaimer,
@@ -86,11 +91,11 @@ class Bitcoin extends Component {
                 <Bar data={this.state.data}
                      options={{
                          scales: {
-                           yAxes: [{
-                               ticks: {
-                                   beginAtZero: true
-                               }
-                           }]
+                             yAxes: [{
+                                 ticks: {
+                                     beginAtZero: true
+                                 }
+                             }]
                          },
                          title: {
                              display: this.props.titleDisplay,
